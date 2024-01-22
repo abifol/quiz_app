@@ -1,5 +1,5 @@
 body {
-  background-color: aliceblue;
+  background-color: gold;
 }
 
 .panel {
@@ -28,13 +28,14 @@ body {
 }
 
 button {
-  margin-right: 75px;
-  margin-top: 8%;
+  margin-right: 40px;
+  margin-top: 3%;
   font-size: 20px;
   padding: 10px 20px;
   background-color: #4f98c2;
   color: white;
   border: none;
+  border-radius: 10%;
   cursor: pointer;
 }
 
