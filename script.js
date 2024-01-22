@@ -82,10 +82,18 @@ function loadScore() {
   });
 }
 
+let answeredQuestions = 0;
+function displayProgress() {
+  const progress = document.getElementById("progress");
+  progress.textContent = `Questions answered: ${answeredQuestions}/${Questions.length}`;
+}
+
 function nextQuestion() {
   if (currQuestion < Questions.length - 1) {
     currQuestion++;
+    answeredQuestions++;
     loadQues();
+    displayProgress();
   } else {
     document.getElementById("opt").remove();
     document.getElementById("ques").remove();
@@ -93,16 +101,21 @@ function nextQuestion() {
     loadScore();
   }
 }
+displayProgress();
 
 function checkAns() {
-  const selectedAns = document.querySelector(
-    'input[name="answer"]:checked'
-  ).value;
+  const selectedOption = document.querySelector('input[name="answer"]:checked');
 
-  if (selectedAns === Questions[currQuestion].correct_answer) {
-    score++;
+  if (selectedOption) {
+    const selectedAns = selectedOption.value;
+
+    if (selectedAns === Questions[currQuestion].correct_answer) {
+      score++;
+    }
+
     nextQuestion();
   } else {
-    nextQuestion();
+    // No option selected, prompt the user to choose an option
+    alert("Please select your answer to proceed.");
   }
 }
