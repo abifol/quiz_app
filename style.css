@@ -28,8 +28,8 @@ body {
 }
 
 button {
-  margin-right: 40px;
-  margin-top: 3%;
+  /* margin-right: 40px; */
+  margin-top: 2%;
   font-size: 20px;
   padding: 10px 20px;
   background-color: #4f98c2;
@@ -37,6 +37,7 @@ button {
   border: none;
   border-radius: 10%;
   cursor: pointer;
+  align-items: center;
 }
 
 button:hover {
@@ -48,4 +49,8 @@ button:hover {
 #score {
   font-size: 30px;
   color: darkslategray;
+}
+
+h3 {
+  color: red;
 }
